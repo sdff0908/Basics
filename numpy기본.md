@@ -294,9 +294,29 @@ print(arr1)
  [4 5 6]]
 ```
 
-## 3. data type 변경
+## 3. data type
 
-* np.astype( )
+* data type 종류
+
+```python
+arr = np.array([1.2, 3, True, 'hello'], dtype=np.object)
+print(arr)
+arr = np.array([1.2, 3, True, 'hello'], dtype=np.str)
+print(arr)
+arr = np.array([1, 2, 3, 4], dtype=np.int32)
+print(arr)
+arr = np.array([1, 2, 3, 4], dtype=np.float64)
+print(arr)
+```
+
+```html
+[1.2 3 True 'hello']
+['1.2' '3' 'True' 'hello']
+[1 2 3 4]
+[1. 2. 3. 4.]
+```
+
+* np.astype( ): data type 변경
 
 ```python
 arr = np.array([1.2, 3.4, 5.3, 6.8])
