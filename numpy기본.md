@@ -413,7 +413,7 @@ plt.show()
 [50.81295108 51.92139751 49.61002382 ... 47.04182219 46.98872778 48.0602767 ]
 ```
 
-![png](md-images/output_10_1.png) 
+![output_10_1](https://user-images.githubusercontent.com/72610879/104833255-a63c0c00-58da-11eb-80ac-b1c0b1bf469e.png)
 
 ### 2) np.random.rand(size)
 
@@ -430,7 +430,7 @@ plt.show()
 [0.79920834 0.73944538 0.69220126 ... 0.42942459 0.62052106 0.11573932]
 ```
 
-![png](md-images/output_10_3.png) 
+![output_10_3](https://user-images.githubusercontent.com/72610879/104833257-a6d4a280-58da-11eb-8674-ee4ec265cd76.png)
 
 ### 3) np.random.randn(size)
 
@@ -451,7 +451,7 @@ plt.show()
 [57 66 39 ... 15 16 50]
 ```
 
- ![image-20210117151605646](md-images/image-20210117151605646.png)
+![image-20210117151605646](https://user-images.githubusercontent.com/72610879/104833252-a50adf00-58da-11eb-9e70-3f0c8156913c.png)
 
 ### 5) np.random.random((size))
 
@@ -470,7 +470,7 @@ plt.show()
 [0.07452357 0.62520544 0.20501572 ... 0.12246561 0.92201029 0.02132257]
 ```
 
-![image-20210117151624237](md-images/image-20210117151624237.png)	
+![image-20210117151624237](https://user-images.githubusercontent.com/72610879/104833253-a5a37580-58da-11eb-96f5-184f7e4ebbc9.png)
 
   ### 6) np.random.seed( )
 
@@ -888,7 +888,7 @@ axis는 숫자로 표현: 0, 1, 2, 3, 4, ...
 
 1차원
 
-![그림1](md-images/%EA%B7%B8%EB%A6%BC1-1610856192550.png)	
+![그림1-1610856166528](https://user-images.githubusercontent.com/72610879/104833261-a76d3900-58da-11eb-950d-c8fd3b47f76f.png)
 
 ```python
 arr = np.array([1, 2, 3, 4, 5]) 							
@@ -907,7 +907,7 @@ print(arr.sum())
 
 2차원
 
-![그림2](md-images/%EA%B7%B8%EB%A6%BC2.png)	
+![그림2](https://user-images.githubusercontent.com/72610879/104833264-a805cf80-58da-11eb-8c0b-46d6846f20b0.png)
 
 ```python
 arr=np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
@@ -924,7 +924,7 @@ print(arr.sum(axis=1))
 
 3차원
 
-![그림3](md-images/%EA%B7%B8%EB%A6%BC3-1610858013029.png)	
+![그림3](https://user-images.githubusercontent.com/72610879/104833265-a89e6600-58da-11eb-82e8-b43813e5d26a.png)
 
 * argmax( )
 
