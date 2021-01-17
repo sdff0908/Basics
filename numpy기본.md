@@ -57,7 +57,7 @@ a_list = [[1, 2, 3], [4, 5, 6]]
 print(a_list)
 
 #numpy의 ndarray
-a_array = np.array([[1, 2, 3], [4, 5, 6]])       	  #list와 달리 ndarray에서는 ','없음
+a_array = np.array([[1, 2, 3], [4, 5, 6]])     #list와 달리 ndarray에서는 ','없음
 print(a_array)
 a_array[1][1]
 ```
@@ -150,11 +150,11 @@ shape: (2, 3)
 arr1 = np.arange(12)
 print(arr1)
 
-arr2 = arr1.reshape(3, 4) 							  #arr2은 arr1과 같은 메모리 공간 사용(->메모리 절약)
-print(arr2)											          #보여주는 방식(View)만 변경
+arr2 = arr1.reshape(3, 4)                 #arr2은 arr1과 같은 메모리 공간 사용(->메모리 절약)
+print(arr2)                               #보여주는 방식(View)만 변경
 print(arr1)
 
-arr2[0, 2] = 200									        #View 데이터 변경하면 원본 데이터도 함께 변경
+arr2[0, 2] = 200                          #View 데이터 변경하면 원본 데이터도 함께 변경
 print(arr2)
 print(arr1)
 
@@ -301,8 +301,8 @@ print(arr1)
 ```python
 arr = np.array([1.2, 3.4, 5.3, 6.8])
 print(arr)
-arr = arr.astype(np.int32)								#np.float64 -> np.int32		
-print(arr)               				    			#반올림 X, 소수점 버림
+arr = arr.astype(np.int32)                #np.float64 -> np.int32		
+print(arr)                                #반올림 X, 소수점 버림
 ```
 
 ```python
@@ -402,10 +402,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 mean = 50
-std = 2       												   #표준편차
+std = 2                                 #표준편차
 arr = np.random.normal(mean, std, (10000,))  
 print(arr)
-plt.hist(arr, bins = 100)                #가로값 100개(10000개 중 겹치는 값들 있으니까)
+plt.hist(arr, bins = 100)               #가로값 100개(10000개 중 겹치는 값들 있으니까)
 plt.show()
 ```
 
@@ -533,9 +533,9 @@ print(arr[1:4:2])                			#arr[1]부터 arr[3]까지의 값을 2씩 �
 arr=np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
 print(arr)
 print(arr[1, 1])
-print(arr[1, :]) 							        #1번째 행 전체
+print(arr[1, :])                      #1번째 행 전체
 print(arr[1:3,])
-print(arr[0])								          #0번째 행 전체
+print(arr[0])                         #0번째 행 전체
 ```
 
 ```python
@@ -648,11 +648,11 @@ print(arr[[1, 3, 4]])                 #np.array([arr[1], arr[3], arr[4]])
 arr=np.arange(0, 12).reshape(3, 4).copy()
 print(arr)
 print(arr[2, 2])
-print(arr[1:2, 2])    							  #1차원
-print(arr[1:2, 1:2])  							  #2차원
-print(arr[[0, 2], 2])  							  #1차원
-print(arr[[0, 2], 2:3])  							#2차원
-print(arr[np.ix_([0, 2], [0, 2])])   	#[[arr[0,0],arr[0,2]],[arr[2,0],arr[2,2]]]
+print(arr[1:2, 2])                    #1차원
+print(arr[1:2, 1:2])                  #2차원
+print(arr[[0, 2], 2])                 #1차원
+print(arr[[0, 2], 2:3])               #2차원
+print(arr[np.ix_([0, 2], [0, 2])])    #[[arr[0,0],arr[0,2]],[arr[2,0],arr[2,2]]]
 ```
 
 ```python
@@ -687,13 +687,13 @@ for tmp in arr:
 print()
 
 #iterator(지시자) 이용한 반복처리 
-it = np.nditer(arr, flags = ['c_index'])          	#nditer = ndarray iterator
-                                              			#flags = iterator가 움직이는 방식
-                                              			#c_index: c언어의 기본 인덱싱 방식
+it = np.nditer(arr, flags = ['c_index'])            #nditer = ndarray iterator
+                                                    #flags = iterator가 움직이는 방식
+                                                    #c_index: c언어의 기본 인덱싱 방식
 while not it.finished:
-    idx = it.index    									            #idx = 0
+    idx = it.index                                  #idx = 0
     print(arr[idx], end = ' ')
-    it.iternext()   									              #화살표 옮기기 
+    it.iternext()                                   #화살표 옮기기 
 ```
 
 1차원 ndarray는 for문을 쓰는게 편하다
@@ -708,14 +708,14 @@ while not it.finished:
 ```python
 arr = np.array([[1, 2, 3], [4, 5, 6]])
 
-for tmp1 in range(arr.shape[0]):       				    #arr.shape=(2,3), arr.shape[0]=2, arr.shape[1] = 3
+for tmp1 in range(arr.shape[0]):                  #arr.shape=(2,3), arr.shape[0]=2, arr.shape[1] = 3
     for tmp2 in range(arr.shape[1]):
         print(arr[tmp1, tmp2], end = ' ')
 
 print()  
 
 #iterator(지시자) 이용한 반복처리
-it = np.nditer(arr, flags = ['multi_index'])			#다차원에서는 multi_index 사용
+it = np.nditer(arr, flags = ['multi_index'])      #다차원에서는 multi_index 사용
 while not it.finished:
     idx = it.multi_index
     print(arr[idx], end = ' ')
@@ -774,9 +774,9 @@ arr1 = np.random.randint(0, 10, (2, 3))
 arr2 = np.random.randint(0, 10, (2, 3))
 print(arr1)
 print(arr2)
-print(arr1 == arr2)  								        #boolean mask
-print(arr1 > arr2)   								        #boolean mask
-print(np.array_equal(arr1, arr2)) 					#arr1과 arr2가 같은지?
+print(arr1 == arr2)                         #boolean mask
+print(arr1 > arr2)                          #boolean mask
+print(np.array_equal(arr1, arr2))           #arr1과 arr2가 같은지?
 ```
 
 ```python
@@ -948,8 +948,8 @@ print(arr.argmax(axis = 1))
 * concatenate( ): ndarray 연결
 
 ```python
-arr1 = np.array([[1, 2, 3], [4, 5, 6]]) 			 #2차원
-arr2 = np.array([7, 8, 9]) 									   #1차원
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])        #2차원
+arr2 = np.array([7, 8, 9])                     #1차원
 arr3 = np.array([7, 8, 9, 10])
 result1 = np.concatenate((arr1, arr2.reshape(1, 3)), axis = 0) #arr2.reshape(1, 3): arr2를 2차원으로 바꿔준다
 result2 = np.concatenate((arr2.reshape(1, 3), arr1), axis = 0)
