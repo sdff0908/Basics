@@ -26,11 +26,11 @@ print(type(a[0]))
 #numpy의 ndarray
 b = np.array([1, 2, 3, 4])
 print(b)											  #list와 달리 ndarray에서는 ','없음
-print(type(b[0]))      								  #numpy.int32: 파이썬의 int와 다른 데이터 타입
+print(type(b[0]))      					#numpy.int32: 파이썬의 int와 다른 데이터 타입
 
 print(type(b))
-print(b.dtype)         								  #ndarray는 모든 원소가 같은 데이터 타입 가진다
-                       								  #list는 모든 원소가 같은 데이터 타입 가지지 않아도 상관X
+print(b.dtype)         					#ndarray는 모든 원소가 같은 데이터 타입 가진다
+                                #list는 모든 원소가 같은 데이터 타입 가지지 않아도 상관X
 
 c = np.array([1, 2, 3, 4, True, 'Hello'])    
 print(c)
@@ -434,7 +434,7 @@ plt.show()
 
 ### 3) np.random.randn(size)
 
- 표준 정규분포에서 실수인 난수 추출  
+표준 정규분포에서 실수인 난수 추출  
 
 ### 4) np.random.randint(low, high, size)
 
