@@ -63,7 +63,7 @@ dtype: int32
 ```python
 s = pd.Series([1, 6, 8, 9, 4], dtype = np.int32, index = ['a', 'b', 'c', 'd', 'e'])
 print(s[0:3])
-print(s['a':'d'])					#지정한 인덱스로 슬라이싱할 경우, a번째 값부터 d번째 값까지 모두 포함
+print(s['a':'d'])				#지정한 인덱스로 슬라이싱할 경우, a번째 값부터 d번째 값까지 모두 포함
 print(s[['a', 'd']])				#fancy indexing
 print(s[s % 2 == 0])				#boolean indexing
 ```
@@ -152,7 +152,7 @@ factoryB = pd.Series([int(x) for x in np.random.normal(70, 8, (10,))],
 print(factoryB)
 
 print(factoryA + factoryB)     							#Series 사칙연산은 같은 index끼리 가능
-														#NaN = Not a number
+										#NaN = Not a number
 ```
 
 ```html
@@ -220,7 +220,7 @@ my_dict = {'Seoul': 1000, 'Incheon': 300, 'Suwon': 500}
 s = pd.Series(my_dict)
 print(s)               									#key값이 index가 된다
 print(s.index)         									#list는 아니지만 list와 동일하게 사용가능
-s.index = ['서울', '인천', '수원']						#인덱스 변경
+s.index = ['서울', '인천', '수원']							   #인덱스 변경
 s.index.name = 'Region'
 s.name = '지역별 가격'
 print(s)
@@ -404,7 +404,7 @@ Index(['name', 'year', 'point'], dtype = 'object')
 import numpy as np
 import pandas as pd
 df = pd.read_csv('C:/Users/Hwayeon Kim/Desktop/movies.csv')	#csv_read:','로 데이터 구분하여 읽어오기
-display(df.head())											#상위 5개 행 출력
+display(df.head())						#상위 5개 행 출력
 print(df.shape)
 ```
 
@@ -641,12 +641,12 @@ column명 사용
 ```python
 print(df['이름'])						 #Series로 출력
 stu_name=df['이름']			  		 #View가 나온다(View수정하면 원본 데이터 수정됨)
-stu_name=df['이름'].copy()             #View가 아닌, 별도의 Series 생성
+stu_name=df['이름'].copy()             			 #View가 아닌, 별도의 Series 생성
 
-display(df[['이름','학년']]) 			#Fancy indexing(여러 column출력 시)
-							  		   #DataFrame 형태로 출력(View)
-display(df['이름':'학년'])   			#Slicing 불가, ERROR!
-							  		   #boolean indexing은 column과 상관 X
+display(df[['이름','학년']]) 			        #Fancy indexing(여러 column출력 시)
+							   #DataFrame 형태로 출력(View)
+display(df['이름':'학년'])   			        #Slicing 불가, ERROR!
+							   #boolean indexing은 column과 상관 X
 ```
 
 * column 추가
@@ -708,7 +708,7 @@ display(df.to_numpy())
 ```python
 import warnings 
 
-warnings.filterwarnings(action = 'ignore')      				#경고 문구 차단
+warnings.filterwarnings(action = 'ignore')      	      #경고 문구 차단
 warnings.filterwarnings(action = 'default')                   #경고 켜기
 ```
 
@@ -762,19 +762,19 @@ display(df['2nd':])
 display(df[['1st', '3rd']])  					  #Fancy indexing X, ERROR!
 
 #loc[]사용하여 행 추출
-display(df.loc['2nd'])   						  #단일 행 인덱싱 가능, Series 리턴
+display(df.loc['2nd'])   					  #단일 행 인덱싱 가능, Series 리턴
 display(df.loc['2nd':'3rd'])   					  #DataFrame 형태로 리턴
 display(df.loc[['1st', '4th']]) 				  #Fancy indexing 가능
 
 #loc[]사용하여 셀 추출
 display(df.loc['1st':'3rd']['이름'])  	   		 #Series 리턴
-display(df.loc['1st':'3rd', '이름'])          	 #Series 리턴
-display(['이름':'학년'])					  		#ERROR!
+display(df.loc['1st':'3rd', '이름'])          	         #Series 리턴
+display(['이름':'학년'])				        #ERROR!
 display(df.loc['1st':'3rd', '이름':'학년'])    		#DataFrame 리턴
-display(df.loc['1st':'3rd', ['이름', '학점']])  	#Fancy Indexing 가능
+display(df.loc['1st':'3rd', ['이름', '학점']])  	        #Fancy Indexing 가능
 
 #Boolean indexing
-display(df.loc[df['학점'] > 4])   			     #Boolean mask
+display(df.loc[df['학점'] > 4])   			  #Boolean mask
 #1)학점이 4.0을 초과하는 학생의 이름, 학점을 DataFrame으로 출력하기
 display(df.loc[df['학점'] > 4, ['이름', '학점']])  
 #2)학점이 1.5이상 2.5이하인 학생의 학과, 이름, 학점을 DataFrame으로 출력하기
@@ -829,7 +829,7 @@ import pandas as pd
 import pandas_datareader.data as pdr
 from datetime import datetime
 
-start = datetime(2019, 1, 1)   							  #2019-01-01:날짜객체생성
+start = datetime(2019, 1, 1)   			          #2019-01-01:날짜객체생성
 end = datetime(2019, 12, 31)
 
 #yahoo에서 제공하는 kospi지수
@@ -882,7 +882,7 @@ import pandas as pd
 import pandas_datareader.data as pdr
 from datetime import datetime
 
-start = datetime(2018, 1, 1)   							   #2018-01-01:날짜객체생성
+start = datetime(2018, 1, 1)   				   #2018-01-01:날짜객체생성
 end = datetime(2018, 12, 31)
 
 #yahoo에서 제공하는 종목 지수
@@ -900,7 +900,7 @@ my_dict = {
 df=pd.DataFrame(my_dict)
 display(df)
 
-display(df.corr()) 										   #상관계수
+display(df.corr()) 					   #상관계수
 ```
 
 |      KOSPI |    삼성전자 | 납북경협주 | LIG넥스원(방위) |
@@ -1032,7 +1032,7 @@ display(df2)
 #DataFrame은 인덱스 기준 정렬되면 데이터도 함께 이동, numpy는 데이터 이동X
 
 #값을 기준으로 정렬
-df3 = df1.sort_values(by = 'b') 		#b열 기준 오름차순으로 전체 정렬
+df3 = df1.sort_values(by = 'b') 	#b열 기준 오름차순으로 전체 정렬
 display(df3)
 
 df4 = df1.sort_values(by = ['b', 'a'])  #b열 기준으로 정렬, 같은 값이 있으면 a열 기준으로 정렬
@@ -1053,7 +1053,7 @@ df.columns = ['가', '나', '다', '라']
 df.index = pd.date_range('20200101', periods = 6)
 df['마'] = ['AA', 'BB', 'CC', 'DD', 'BB', 'CC']
 
-print(df['마'].unique())      			 #중복요소 제거, ndarray 리턴
+print(df['마'].unique())      		 #중복요소 제거, ndarray 리턴
 
 display(df.drop_duplicates(['마']))  	 #중복요소 제거, DataFrame 리턴
 display(df.drop_duplicates(['마','다']))	#중복요소 제거, DataFrame 리턴
@@ -1082,7 +1082,7 @@ df.drop_duplicates(inplce = True)
 * 각 value 값의 갯수 구하기
 
 ```python
-print(df['마'].value_counts())       #Series 리턴
+print(df['마'].value_counts())           #Series 리턴
 ```
 
 * 포함 여부 확인
@@ -1246,7 +1246,7 @@ score = df['학점'].groupby(df['학과'])       #주소 출력
 # 그룹안에 데이터를 확인하고 싶은 경우에는 get_group()
 score.get_group('경영학과')
 # 학과별 인원수
-score.size() 								#Series 리턴
+score.size() 			             #Series 리턴
 df.groupby(df['학과'])['이름'].count()
 #학과별 평균학점
 df['학점'].groupby(df['학과']).mean()
@@ -1263,6 +1263,6 @@ multi index 분류
 #학과 및 학년 별 평균학점
 score = df['학점'].groupby([df['학과'], df['학년']])
 print(score.mean())                    		#Series 리턴
-display(score.mean().unstack())  			#최하위 index(여기서는 '학년')를 column으로 변경
+display(score.mean().unstack())  		#최하위 index(여기서는 '학년')를 column으로 변경
 ```
 
