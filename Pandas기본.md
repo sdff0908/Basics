@@ -136,7 +136,7 @@ dtype: object
 ```python
 import numpy as np
 import pandas as pd
-from datetime import datetime, timedelta				#datetime모듈: 일, 주, 월, 년 단위로 증감
+from datetime import datetime, timedelta				       #datetime모듈: 일, 주, 월, 년 단위로 증감
 start_day = datetime(2020, 1, 1)
 print(start_day)
 
@@ -639,14 +639,14 @@ display(df)
 column명 사용
 
 ```python
-print(df['이름'])						 #Series로 출력
-stu_name=df['이름']			  		 #View가 나온다(View수정하면 원본 데이터 수정됨)
+print(df['이름'])                                          #Series로 출력
+stu_name=df['이름']                                        #View가 나온다(View수정하면 원본 데이터 수정됨)
 stu_name=df['이름'].copy()             			 #View가 아닌, 별도의 Series 생성
 
 display(df[['이름','학년']]) 			        #Fancy indexing(여러 column출력 시)
-							   #DataFrame 형태로 출력(View)
+                                                           #DataFrame 형태로 출력(View)
 display(df['이름':'학년'])   			        #Slicing 불가, ERROR!
-							   #boolean indexing은 column과 상관 X
+                                                           #boolean indexing은 column과 상관 X
 ```
 
 * column 추가
@@ -756,25 +756,25 @@ display(df.iloc[[1, 3]])  		#Fancy indexing 가능
 
 ```python
 #loc[]사용 X
-print(df['1st'])            					  #단일 행 인덱싱 X, ERROR!
+print(df['1st'])                                         #단일 행 인덱싱 X, ERROR!
 display(df['2nd':'4th'])   
 display(df['2nd':])
-display(df[['1st', '3rd']])  					  #Fancy indexing X, ERROR!
+display(df[['1st', '3rd']])                              #Fancy indexing X, ERROR!
 
 #loc[]사용하여 행 추출
-display(df.loc['2nd'])   					  #단일 행 인덱싱 가능, Series 리턴
-display(df.loc['2nd':'3rd'])   					  #DataFrame 형태로 리턴
-display(df.loc[['1st', '4th']]) 				  #Fancy indexing 가능
+display(df.loc['2nd'])                                   #단일 행 인덱싱 가능, Series 리턴
+display(df.loc['2nd':'3rd'])                             #DataFrame 형태로 리턴
+display(df.loc[['1st', '4th']])                          #Fancy indexing 가능
 
 #loc[]사용하여 셀 추출
-display(df.loc['1st':'3rd']['이름'])  	   		 #Series 리턴
-display(df.loc['1st':'3rd', '이름'])          	         #Series 리턴
-display(['이름':'학년'])				        #ERROR!
-display(df.loc['1st':'3rd', '이름':'학년'])    		#DataFrame 리턴
-display(df.loc['1st':'3rd', ['이름', '학점']])  	        #Fancy Indexing 가능
+display(df.loc['1st':'3rd']['이름'])                      #Series 리턴
+display(df.loc['1st':'3rd', '이름'])                      #Series 리턴
+display(['이름':'학년'])                                   #ERROR!
+display(df.loc['1st':'3rd', '이름':'학년'])                #DataFrame 리턴
+display(df.loc['1st':'3rd', ['이름', '학점']])             #Fancy Indexing 가능
 
 #Boolean indexing
-display(df.loc[df['학점'] > 4])   			  #Boolean mask
+display(df.loc[df['학점'] > 4])                            #Boolean mask
 #1)학점이 4.0을 초과하는 학생의 이름, 학점을 DataFrame으로 출력하기
 display(df.loc[df['학점'] > 4, ['이름', '학점']])  
 #2)학점이 1.5이상 2.5이하인 학생의 학과, 이름, 학점을 DataFrame으로 출력하기
@@ -797,7 +797,7 @@ df.loc['6th', '이름':'학점'] = ['김준수', 3, 3.7]
 * row 삭제
 
 ```python
-df.drop('3rd', axis = 0, inplace = True)  		   #axis = 0, inplace = False가 기본값
+df.drop('3rd', axis = 0, inplace = True)           #axis = 0, inplace = False가 기본값
 display(df)
 
 df.drop(['1st', '4th'], axis = 0, inplace = True)  #Fancy indexing, df.drop은 slicing 불가
@@ -1053,10 +1053,10 @@ df.columns = ['가', '나', '다', '라']
 df.index = pd.date_range('20200101', periods = 6)
 df['마'] = ['AA', 'BB', 'CC', 'DD', 'BB', 'CC']
 
-print(df['마'].unique())      		 #중복요소 제거, ndarray 리턴
+print(df['마'].unique())                  #중복요소 제거, ndarray 리턴
 
-display(df.drop_duplicates(['마']))  	 #중복요소 제거, DataFrame 리턴
-display(df.drop_duplicates(['마','다']))	#중복요소 제거, DataFrame 리턴
+display(df.drop_duplicates(['마']))       #중복요소 제거, DataFrame 리턴
+display(df.drop_duplicates(['마','다']))  #중복요소 제거, DataFrame 리턴
 ```
 
 중복 행 제거
@@ -1246,7 +1246,7 @@ score = df['학점'].groupby(df['학과'])       #주소 출력
 # 그룹안에 데이터를 확인하고 싶은 경우에는 get_group()
 score.get_group('경영학과')
 # 학과별 인원수
-score.size() 			             #Series 리턴
+score.size()                                #Series 리턴
 df.groupby(df['학과'])['이름'].count()
 #학과별 평균학점
 df['학점'].groupby(df['학과']).mean()
